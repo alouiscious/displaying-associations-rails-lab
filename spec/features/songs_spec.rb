@@ -13,9 +13,10 @@ describe 'songs', type: :feature do
   end
 
   it "show page links to the artist" do
-  it 'show page links to the artist show page' do
-    visit song_path(@song)
-    expect(page.status_code).to eq(200)
-    expect(page).to have_link('Daft Punk', href: artist_path(@artist))
+    it 'show page links to the artist show page' do
+      visit song_path(@song)
+      expect(page.status_code).to eq(200)
+      expect(page).to have_link('Daft Punk', href: artist_path(@artist))
+    end
   end
 end
