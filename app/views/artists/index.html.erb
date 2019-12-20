@@ -1,9 +1,11 @@
-<h1>Artist form <%= @artist.name %></h1>
+<h1>Artists  </h1>
 
-<%= form_for @artist  do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br />
-
-  <%= f.submit %>
+  <% @artists.each  do |artist| %>
+   <%= form_for artist do |f| %>
+    <h4>
+      <%= f.label :name %>
+      <%= link_to artist.name, artist_path(artist) %> - 
+      (<%= artist.song_count %> <%= 'song'.pluralize(artist.song_count) %>)
+    </h4>
+  <% end %>
 <% end %>

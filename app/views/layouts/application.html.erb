@@ -10,5 +10,12 @@
       <%= content_tag :div, msg, class: name %>
     <% end -%>
     <%= yield %>
+    <div class = nav>
+    <br>
+      <%= link_to "All Songs", songs_path  %> | 
+      <%= link_to "All Artists", artists_path  %> 
+
+
+    </div>
   </body>
 </html>

@@ -1,9 +1,9 @@
-<h1>Song <%= @song.name %></h1>
-
+show
 <%= form_for @song  do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br />
-
+  <h1>Song <%= f.label :title %>: <%= @song.title %></h1>
+  <h3>Artist: <a href="<%= artist_path(artist) %>"><%=  @song.artist_name %></a>
+  <br><br>
+  Edit <%= f.label :title %>:
+  <%= f.text_field :title %> 
   <%= f.submit %>
 <% end %>

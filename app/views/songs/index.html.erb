@@ -1,9 +1,12 @@
-<h1>Songs <%= @song.name %></h1>
-
-<%= form_for @song  do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br />
-
-  <%= f.submit %>
+<h1>Songs </h1>
+<% @songs.each do |song| %>
+  <ul>
+      <h4>
+        <li>
+          <a href="<%= song_path(song) %>"> 
+            <%= song.artist_name %> - <%= song.title %>
+          </a>
+        </li> 
+      </h4>
+  </ul>
 <% end %>
